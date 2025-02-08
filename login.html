@@ -56,25 +56,20 @@
               <input type="email" class="form-control mb-3" id="email" placeholder="ejemplo@gmail.com">
               <label for="password">Contraseña</label>
               <input type="password" class="form-control mb-3" id="password" placeholder="**********">
-              <button type="submit" class="btn btn-danger mt-3 ">Enviar</button>
+              <div id="liveAlertPlaceholder"></div>
+              <button type="button" class="btn btn-danger" id="liveAlertBtn">Enviar</button>
               <a href="#" class="d-block mt-2">Olvidaste tu contraseña?</a>
+              
             </form>
           </section>
           <aside class=" aside  text-center ">
             <p>Ingresar con:</p>
-            <button class="btn btn-light"><img src="/assets/img/google.png" alt="google.com"></button>
-            <button class="btn btn-light"><img src="/assets/img/linkedin.png" alt="linkedin.com"></button>
-            <button class="btn btn-light"><img src="/assets/img/outlook.png" alt="outlook.com"></button>
+            <button  type="button" class="btn btn-light" data-bs-toggle="popover" data-bs-title="Atención" data-bs-content="Te logueaste con google"><img src="/assets/img/google.png" alt="google.com"></button>
+            <button  type="button" class="btn btn-light"  data-bs-toggle="popover" data-bs-title="Atención" data-bs-content="Te logueaste con linkedin"><img src="/assets/img/linkedin.png" alt="linkedin.com"></button>
+            <button  type="button" class="btn btn-light"  data-bs-toggle="popover" data-bs-title="Atención" data-bs-content="Te logueaste con outlook"><img src="/assets/img/outlook.png" alt="outlook.com"></button>
           </aside>
         </div>
       
-      
-
-
-       
-
-
-
     </main>
 
     <footer>
@@ -111,6 +106,30 @@
     </footer>
 
     <script src="/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </ma>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+          const alertButton = document.getElementById("liveAlertBtn");
+
+          function showAlert(message, type) {
+              const wrapper = document.createElement("div");
+              wrapper.innerHTML = `
+                  <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                      ${message}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              `;
+              alertPlaceholder.appendChild(wrapper);
+          }
+
+          alertButton.addEventListener("click", function () {
+              showAlert("Ingresó!", "success");
+          });
+      });
+  </script>
+  <script>const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script>
+  </body>
 
 </html>
