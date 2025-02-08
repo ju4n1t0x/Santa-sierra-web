@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/Sass/index.css" />
     <title>Santa Sierra Productos Naturales</title>
   </head>
+
   <body>
 
     <header>
@@ -40,31 +41,30 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav container-fluid gap-3">
+          <ul class="navbar-nav container-fluid">
             <li class="nav-item">
-              <button class="btn btn-primary">Inicio</button>
+              <button class="btn btn-primary" >Inicio</button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary">Ingresar</button>
+              <button class="btn btn-primary" onclick="window.location.href='login.html';">Ingresar</button>
             </li>
             <li class="nav-item">
               <button class="btn btn-primary">Registrarse</button>
             </li>
-            <div class="nav-item cart ">  
+            <div class="nav-item cart">  
                 <i class="bi bi-cart2"></i>
             </div>           
           </ul> 
       </div>
       </nav>
-
     </header>
+
     <main>
     <section class="banner container-fluid">
       <img src="/assets/img/mate-banner.avif" alt="" />
     </section>
 
-
-   
+  
 <section class="sec-tittle container-fluid"><h1>Productos Naturales</h1></section>
 
 
@@ -96,9 +96,9 @@
 
 
 
-<section class="sec-tittle container-fluid"><h2>Nosotros</h2></section>
+<section class="sec-tittle container-fluid" id="nosotros"><h2>Nosotros</h2></section>
 
-<section class="noticias container-fluid">
+<section class="noticias nosotros container-fluid">
 <article class="text container-fluid">
     <p>
       Bienvenidos a Santa Sierra, un emprendimiento familiar dedicado a ofrecer productos naturales y saludables sin agroquímicos. 
@@ -112,7 +112,7 @@
   </section>
 
 
-  <section class="sec-tittle container-fluid"><h2>Mision</h2></section>
+  <section class="sec-tittle container-fluid" id="mision"><h2>Mision</h2></section>
   <section class="noticias container-fluid">
     <article class="text container-fluid">
         <p>En Santa Sierra, la sustentabilidad es el corazón de nuestro emprendimiento. 
@@ -125,7 +125,7 @@
 
 
 
-<section class="sec-tittle container-fluid"><h2>Sucursales</h2></section>
+<section class="sec-tittle container-fluid" id="sucursales"><h2>Sucursales</h2></section>
 <section class="sucursales container-fluid">
    <article class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.639865362162!2d-64.18328842365287!3d-31.42404699662303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3b8bf977555%3A0x5bdbceb3a6c9b147!2sSanta%20Sierra%20Yerbas%20Naturales!5e0!3m2!1ses-419!2sar!4v1738432114400!5m2!1ses-419!2sar" 
@@ -148,9 +148,9 @@
   </div>
   
   <div class="links col-lg-4 col-md-5 col-sm-12">
-    <a href="#titulo-nosotros"><h3>Nosotros</h3></a>
-    <a href="#titulo-mision"><h3>Mision</h3></a>
-    <a href="#titulo-sucursales"><h3>Sucursales</h3></a>
+    <a href="#nosotros"><h3>Nosotros</h3></a>
+    <a href="#mision"><h3>Mision</h3></a>
+    <a href="#sucursales"><h3>Sucursales</h3></a>
 </div>
 
 <div class="contacto col-lg-4 col-md-5 col-sm-12">

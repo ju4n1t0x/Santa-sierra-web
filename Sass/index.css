@@ -11597,7 +11597,7 @@ body {
 }
 
 .navbar {
-  justify-content: space-around;
+  display: flex;
   width: 100%;
   height: 10%;
   border-bottom: 1px solid #6e6e6e;
@@ -11607,6 +11607,7 @@ body {
 .navbar .barra-navegacion img {
   width: 3rem;
   height: 3rem;
+  grid-column: 1;
   filter: drop-shadow(2px 2px 20px #ffffff);
   cursor: pointer;
   transition: opacity 0.3s esase-in-out;
@@ -11679,7 +11680,9 @@ body {
   margin: 2rem 0;
   position: relative;
 }
-.sec-tittle h1, .sec-tittle .h1, .sec-tittle h2, .sec-tittle .h2 {
+.sec-tittle h1, .sec-tittle .h1,
+.sec-tittle h2,
+.sec-tittle .h2 {
   font-size: clamp(1.4em, 5vw, 3.5em);
   font-weight: 700;
   color: #2c3e50;
@@ -11795,14 +11798,20 @@ body {
 .noticias {
   display: flex;
   width: 100%;
+  height: 100%;
   background-color: #b5c9ab;
   text-align: center;
 }
 .noticias .text {
-  padding-top: 1rem;
+  padding: 4rem;
   font-size: 1.3em;
   font-style: italic;
   color: #2c3e50;
+}
+@media (max-width: 211px) {
+  .noticias .text {
+    font-size: 0.6em;
+  }
 }
 
 .sucursales {
@@ -11895,4 +11904,154 @@ body {
 .sec-footer .links label i,
 .sec-footer .contacto label i {
   padding: 1rem;
+}
+
+.contenedor-general {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-template-rows: repeat(3, 3fr);
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+  padding: 5px;
+  border: 2px solid black;
+}
+.contenedor-general .formulario {
+  grid-column: 1/span 2;
+  grid-row: 1/span3;
+  background-color: #b5c9ab;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 10px;
+  border-radius: 15px;
+  gap: 10px;
+}
+@media (max-width: 1147px) {
+  .contenedor-general .formulario {
+    width: 95%;
+  }
+}
+@media (max-width: 768px) {
+  .contenedor-general .formulario {
+    grid-column: 1/span 3;
+    grid-row: 1/span 2;
+  }
+}
+@media (max-width: 305px) {
+  .contenedor-general .formulario input,
+  .contenedor-general .formulario label,
+  .contenedor-general .formulario button {
+    width: 50%;
+    height: 20px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.contenedor-general .formulario input,
+.contenedor-general .formulario label,
+.contenedor-general .formulario button {
+  width: 100%;
+}
+.contenedor-general .formulario label {
+  color: #2c3e50;
+  font-weight: 600;
+}
+.contenedor-general .formulario a {
+  padding-top: 10px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-weight: 400;
+}
+.contenedor-general .formulario a:hover {
+  color: #ffffff;
+}
+.contenedor-general .aside {
+  grid-column: 3/span 1;
+  grid-row: 1/span3;
+  background-color: #b5c9ab;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 95%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  gap: 10px;
+}
+.contenedor-general .aside p {
+  font-size: 1.5em;
+  color: #2c3e50;
+  font-weight: 600;
+}
+.contenedor-general .aside button {
+  display: flex;
+  max-width: 50px;
+  min-width: 50px;
+  min-height: 40px;
+  justify-content: center;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+.contenedor-general .aside button img {
+  width: 50px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  image-rendering: optimizeQuality;
+}
+.contenedor-general .aside button:hover {
+  background-color: #cbd3da;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.contenedor-general .aside button:active:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+  .contenedor-general .aside {
+    grid-column: 1/span 3;
+    grid-row: 3/span 1;
+    width: 95%;
+  }
+}
+@media (max-width: 576px) {
+  .contenedor-general .aside {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .contenedor-general .aside p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 576px) and (max-width: 350px) {
+  .contenedor-general .aside button {
+    display: flex;
+    max-width: 40px;
+    min-width: 40px;
+    min-height: 30px;
+    justify-content: center;
+    border-radius: 30px;
+  }
+  .contenedor-general .aside button img {
+    width: 30px;
+    height: 20px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    image-rendering: optimizeQuality;
+  }
+  .contenedor-general .aside p {
+    font-size: 0.7em;
+  }
 }/*# sourceMappingURL=index.css.map */
